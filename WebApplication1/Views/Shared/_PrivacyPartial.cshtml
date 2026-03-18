@@ -1,0 +1,50 @@
+<div id="sitePrivacy" class="site-privacy-footer">
+    <div class="container d-flex justify-content-between align-items-center">
+        <small class="m-0">En GreenLife cuidamos tus datos. Recopilamos información mínima para mejorar tu experiencia. 
+            <a asp-controller="Recetas" asp-action="Privacy">Ver política completa</a>
+        </small>
+        <div>
+            <button id="privacyCloseBtn" type="button" class="btn btn-sm btn-outline">Ocultar</button>
+        </div>
+    </div>
+</div>
+
+<button id="privacyOpenBtn" type="button" class="privacy-toggle-btn btn btn-sm btn-green" aria-hidden="true" style="display:none">Política</button>
+
+<script>
+    (function(){
+        var storageKey = 'greenlife_privacy_hidden';
+        var bar = document.getElementById('sitePrivacy');
+        var openBtn = document.getElementById('privacyOpenBtn');
+        var closeBtn = document.getElementById('privacyCloseBtn');
+
+        function updateVisibility(){
+            var hidden = localStorage.getItem(storageKey) === 'true';
+            if(hidden){
+                if(bar) bar.style.display = 'none';
+                if(openBtn) openBtn.style.display = 'block';
+            } else {
+                if(bar) bar.style.display = 'block';
+                if(openBtn) openBtn.style.display = 'none';
+            }
+        }
+
+        if(closeBtn){
+            closeBtn.addEventListener('click', function(){
+                localStorage.setItem(storageKey, 'true');
+                updateVisibility();
+            });
+        }
+        if(openBtn){
+            openBtn.addEventListener('click', function(){
+                localStorage.setItem(storageKey, 'false');
+                updateVisibility();
+            });
+        }
+
+        // run on load
+        if(typeof window !== 'undefined'){
+            try{ updateVisibility(); }catch(e){}
+        }
+    })();
+</script>

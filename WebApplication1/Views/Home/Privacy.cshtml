@@ -1,0 +1,28 @@
+@{
+    ViewData["Title"] = "Política de Privacidad";
+}
+
+<div class="category-header text-center py-5">
+    <h1 class="display-4 font-weight-bold" style="font-family: 'Playfair Display', serif;">Privacidad y Seguridad</h1>
+    <p class="lead mt-3" style="font-family: 'Outfit', sans-serif;">En GreenLife nos tomamos muy en serio tu información.</p>
+</div>
+
+<div class="container my-5">
+    <div class="recipe-card p-5" style="max-width: 800px; margin: 0 auto; background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(20px);">
+        <h3 class="mb-4" style="color: var(--emerald-green);">Nuestra Política</h3>
+        
+        <p><strong>1. Uso de Datos:</strong> Solo recopilamos tu correo y nombre al registrarte para enviarte las mejores recetas veganas. Nunca venderemos tu información a terceros.</p>
+        
+        <p><strong>2. Cookies:</strong> Utilizamos cookies estrictamente necesarias para mantener tu sesión activa y guardar tus preferencias de navegación en GreenLife.</p>
+        
+        <p><strong>3. Seguridad:</strong> Las contraseñas en nuestra base de datos (SQL Server) se almacenan utilizando algoritmos de Hash seguros (Entity Framework Auth).</p>
+        
+        <p><strong>4. Transparencia:</strong> Si en algún momento deseas eliminar tu cuenta y todas tus recetas guardadas, tendrás la opción de hacerlo sin complicaciones ni preguntas.</p>
+        
+        <div class="mt-5 text-center">
+            <a asp-controller="Recetas" asp-action="Index" class="btn text-white w-50 py-3 rounded-pill fw-bold" style="background: linear-gradient(135deg, var(--mint-green) 0%, var(--emerald-green) 100%);">
+                Volver a GreenLife
+            </a>
+        </div>
+    </div>
+</div>

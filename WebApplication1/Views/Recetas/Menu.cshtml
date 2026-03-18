@@ -1,0 +1,35 @@
+﻿<div class="nav-top">
+    <a asp-controller="Recetas" asp-action="Index" class="btn-cerrar">Cerrar Sesión</a>
+</div>
+
+<div class="menu-container">
+    <h1>🥗 ¿Qué vamos a cocinar hoy?</h1>
+    <p>Selecciona una categoría para ver las recetas veganas de GreenLife</p>
+
+    <div class="category-grid">
+        <a asp-action="PlatosFuertes" class="card-categoria">
+            <h3>🍲 Platos Fuertes</h3>
+            <p>Almuerzos y cenas nutritivas</p>
+        </a>
+
+        <a asp-action="Snacks" class="card-categoria">
+            <h3>🍿 Snacks</h3>
+            <p>Para picar entre horas</p>
+        </a>
+
+        <a asp-action="Bebidas" class="card-categoria">
+            <h3>🥤 Bebidas</h3>
+            <p>Jugos, batidos y más</p>
+        </a>
+
+        <a asp-action="Postres" class="card-categoria">
+            <h3>🍰 Postres</h3>
+            <p>Dulces sin ingredientes animales</p>
+        </a>
+
+        <a asp-action="Pasabocas" class="card-categoria">
+            <h3>🥙 Pasabocas</h3>
+            <p>Entradas y platos pequeños</p>
+        </a>
+    </div>
+</div>

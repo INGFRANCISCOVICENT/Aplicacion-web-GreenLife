@@ -1,0 +1,22 @@
+<div class="login-container" style="text-align:center; margin-top:50px;">
+    <h2>Crear cuenta en GreenLife</h2>
+    <form asp-action="Menu" method="get" style="display:inline-block; border:1px solid #ccc; padding:20px; border-radius:10px;">
+        <div style="margin-bottom:10px;">
+            <input type="text" placeholder="Usuario" name="user" required />
+        </div>
+        <div style="margin-bottom:10px;">
+            <input type="email" placeholder="Correo electrónico" name="email" required />
+        </div>
+        <div style="margin-bottom:10px;">
+            <input type="password" placeholder="Contraseña" name="pass" required />
+        </div>
+        <div style="margin-bottom:10px;">
+            <input type="password" placeholder="Confirmar contraseña" name="pass2" required />
+        </div>
+        <button type="submit" class="btn btn-outline btn-lg btn-icon">
+            <span class="icon">✅</span>
+            <span>Registrarse</span>
+        </button>
+    </form>
+    <p><a asp-action="Index">Volver al inicio</a></p>
+</div>

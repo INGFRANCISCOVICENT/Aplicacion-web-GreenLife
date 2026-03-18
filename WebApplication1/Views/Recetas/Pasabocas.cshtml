@@ -1,0 +1,46 @@
+@model IEnumerable<WebApplication1.Models.Receta>
+
+<div class="category-header">
+    <h1>🥙 Pasabocas y Entradas</h1>
+    <p>Pequeños bocados llenos de sabor para empezar cualquier ocasión importante.</p>
+</div>
+
+<div class="container">
+    <div class="recipe-grid">
+        @if (!Model.Any())
+        {
+             <p class="text-center w-100">Cargando recetas...</p>
+        }
+        @foreach (var receta in Model)
+        {
+            <article class="recipe-card">
+                <div class="recipe-body">
+                    <h3>@receta.Titulo</h3>
+                    <p>@receta.Descripcion</p>
+                    @if (!string.IsNullOrEmpty(receta.Ingredientes))
+                    {
+                        <ul class="text-start">
+                            @foreach(var item in receta.Ingredientes.Split(','))
+                            {
+                                <li>@item.Trim()</li>
+                            }
+                        </ul>
+                    }
+                </div>
+                <div class="recipe-footer">
+                    <span class="badge bg-success">@receta.TiempoPreparacion min</span>
+                    <button class="btn btn-sm btn-outline-success">Ver Detalles</button>
+                </div>
+            </article>
+        }
+    </div>
+
+    <div class="navigation-footer">
+        <a asp-action="Menu" class="btn btn-secondary">
+            🏠 Volver al Menú
+        </a>
+        <a asp-controller="Recetas" asp-action="Index" class="btn btn-danger">
+            🚪 Cerrar Sesión
+        </a>
+    </div>
+</div>
