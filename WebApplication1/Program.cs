@@ -5,7 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Configurar DbContext con la cadena de conexión de appsettings.json
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
