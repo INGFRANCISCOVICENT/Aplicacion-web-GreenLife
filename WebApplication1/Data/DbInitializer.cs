@@ -12,8 +12,15 @@ namespace WebApplication1.Data
             // Buscamos si ya existen recetas. Si es así, no hacemos nada.
             if (context.Recetas.Any())
             {
+                // Si ya hay recetas pero no usuarios, agregamos los usuarios solicitados
+                if (!context.Usuarios.Any())
+                {
+                    SeedUsers(context);
+                }
                 return;
             }
+
+            SeedUsers(context);
 
             var recetas = new Receta[]
             {
@@ -53,6 +60,19 @@ namespace WebApplication1.Data
             };
 
             context.Recetas.AddRange(recetas);
+            context.SaveChanges();
+        }
+
+        private static void SeedUsers(ApplicationDbContext context)
+        {
+            var users = new Usuario[]
+            {
+                new Usuario { Nombre = "Francisco", Email = "francisco@greenlife.com", PasswordHash = BCrypt.Net.BCrypt.HashPassword("Fr1234") },
+                new Usuario { Nombre = "Sebastian", Email = "sebastian@greenlife.com", PasswordHash = BCrypt.Net.BCrypt.HashPassword("Se1234") },
+                new Usuario { Nombre = "Darien", Email = "darien@greenlife.com", PasswordHash = BCrypt.Net.BCrypt.HashPassword("Da1234") }
+            };
+
+            context.Usuarios.AddRange(users);
             context.SaveChanges();
         }
     }

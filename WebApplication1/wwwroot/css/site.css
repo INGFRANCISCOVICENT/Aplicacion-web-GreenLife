@@ -48,6 +48,7 @@ h1, h2, h3, h4, h5, h6 {
 .text-gradient {
     background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     font-family: 'Outfit', sans-serif;
     font-size: 1.5rem;
@@ -362,6 +363,38 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer-link:hover {
     text-decoration: underline;
+}
+
+/* Premium Logout Button */
+.btn-logout {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    padding: 8px 20px;
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: var(--transition-bounce);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.btn-logout:hover {
+    background: #ef4444;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.user-welcome {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .social-links a {
