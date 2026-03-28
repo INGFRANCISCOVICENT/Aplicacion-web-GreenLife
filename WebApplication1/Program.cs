@@ -58,7 +58,5 @@ app.MapStaticAssets();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Recetas}/{action=Index}/{id?}"); // Aquí cambiamos Home por Recetas
-    
-
 
 app.Run();

@@ -31,8 +31,43 @@
             </div>
         </form>
 
+        <div class="social-login-container">
+            <div class="social-login-divider">
+                <span>O continuar con</span>
+            </div>
+            <button type="button" class="btn-social btn-social-google" onclick="simulateSocialAuth('Google', this)">
+                <i class="fab fa-google text-danger"></i>
+                <span class="ms-2">Google</span>
+            </button>
+            <button type="button" class="btn-social btn-social-apple" onclick="simulateSocialAuth('Apple', this)">
+                <i class="fab fa-apple"></i>
+                <span class="ms-2">Apple</span>
+            </button>
+        </div>
+
         <div class="text-center mt-4 pt-3 border-top">
             <p class="mb-0 text-muted">¿No tienes cuenta? <a asp-action="Register" class="footer-link">Regístrate aquí</a></p>
         </div>
     </div>
 </div>
+
+@section Scripts {
+    <script>
+        function simulateSocialAuth(provider, btnElement) {
+            // Save original content
+            const originalHtml = btnElement.innerHTML;
+            
+            // Show loading state
+            btnElement.innerHTML = `<i class="fas fa-spinner fa-spin"></i><span class="ms-2">Conectando con ${provider}...</span>`;
+            btnElement.disabled = true;
+            
+            // Simulate network delay
+            setTimeout(() => {
+                alert(`[Simulación] Inicio de sesión exitoso con tu cuenta de ${provider}.`);
+                // Restore button state
+                btnElement.innerHTML = originalHtml;
+                btnElement.disabled = false;
+            }, 1500);
+        }
+    </script>
+}
