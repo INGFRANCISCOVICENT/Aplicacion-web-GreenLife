@@ -12,18 +12,20 @@ Green Life es una plataforma web desarrollada en ASP.NET Core (C#) diseñada par
 ## 🛠️ Tecnologías Utilizadas
 
 * *Backend:* C# con ASP.NET Core
-* *Base de Datos:* SQLite (Configurada para el entorno de desarrollo)
+* *Base de Datos:* SQL Server
 * *Arquitectura:* MVC (Model-View-Controller)
 * *Control de Versiones:* Git & GitHub
 
 ## ⚙️ Requisitos Previos para Desarrollo Local
 
-Para ejecutar este proyecto en tu máquina local, necesitarás tener instalado:
+Para ejecutar y modificar este proyecto en tu máquina local, necesitarás:
 * [.NET SDK](https://dotnet.microsoft.com/download) (Compatible con la versión del proyecto)
 * Visual Studio 2022 o Visual Studio Code
+* SQL Server (Developer, Express o LocalDB)
 
 ## 🏃‍♂️ Cómo ejecutar el proyecto localmente
 
 1. Clona este repositorio:
    ```bash
    git clone [https://github.com/INGFRANCISCOVICENT/Aplicacion-web-GreenLife.git](https://github.com/INGFRANCISCOVICENT/Aplicacion-web-GreenLife.git)
+   
